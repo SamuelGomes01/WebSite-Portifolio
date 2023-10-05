@@ -1,3 +1,4 @@
+/* RESET */
 *{
     margin: 0;
     padding: 0;
@@ -25,7 +26,7 @@ body {
 
 .logo {
     position: relative;
-    font-size: 38px;
+    font-size: 42px;
     color: #ededed;
     text-decoration: none;
     font-weight: 600;
@@ -68,18 +69,43 @@ body {
     font-weight: 700;
 }
 
-.home-content h1::before {
-    content: '';
+/* FORMATAÇÃO DO TEXTO ANIMADO */
+
+.text {
+    position: relative;
+    color: #00abf0;
+    font-size: 40px;
+    font-weight: 600;
+ }
+
+ .text.first-text {
+    color: #fff;
+ }
+
+/* CONTROLE DO TEXTO ANIMADO */
+ .text.sec-text:before {
+    content: "";
     position: absolute;
     top: 0;
-    right: 0;
-    width: 100%;
+    left: 0;
     height: 100%;
-    background: #000000;
-    animation: showRight 1s ease forwards;
-    animation-delay: 1s;
+    width: 100%;
+    background-color: black;
+    border-left: 2px solid #00abf0;
+    animation: animate 5s steps(12);
+    animation-iteration-count: 1.5;
+    animation-fill-mode: forwards;
+ }
 
-}
+ @keyframes animate {
+    40%, 60% {
+        left: calc(100% + 1.5px);
+    }
+    100% {
+        left: 0%;
+    }
+ }
+
 
 .home-content h3 {
     position: relative;
@@ -88,18 +114,6 @@ body {
     color: #00abf0;
 }
 
-.home-content h3::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #000000;
-    animation: showRight 1s ease forwards;
-    animation-delay: 1.4s;
-
-}
 
 .home-content p {
     position: relative;
@@ -256,37 +270,7 @@ body {
     width: 100%;
 }
 
-.home-imghover {
-    position: absolute;
-    top: 0;
-    right: 30px;
-    width: 580px;
-    height: 100%;
-    background: transparent;
-    transition: 3s;
-    animation: manipActiveHover .1s forwards;
-    animation-delay: 4s;
-    pointer-events: none;
-}
 
-/* .home-imghover:hover {
-    background-color: #1a1d1f;
-    opacity: .8;
-} */
-
-.home-imghover::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #101315;
-    animation: showRight 1s ease forwards;
-    animation-delay: 3s;
-    z-index: 100;
-
-}
 /* KEYFRAMES ANIMATION */
 @keyframes showRight {
     100% {

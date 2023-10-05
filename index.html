@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifólio (CSS e HTML)</title>
+    <title>Site para portifólio</title>
     
     <link rel="stylesheet" href="assets/Css/styles.css">
 
@@ -28,22 +28,37 @@
 
     <section class="home">
         <div class="home-content">
-            <h1>Olá, Eu sou o <br>Samuel Gomes</h1>
-            <h3>Frontend Developer</h3>
+
+            <h1 class="text first-text">Olá, eu sou </h1>
+            <span class="text sec-text">Samuel Gomes</span>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio porro debitis labore, nesciunt ipsam assumenda commodi maiores a cupiditate dolore iusto alias sapiente aspernatur voluptatem velit ut eligendi distinctio aliquam.</p>
             <div class="btn-box">
                 <a href="#">Contrate-me</a>
                 <a href="#">Vamos conversar</a>
             </div>
         </div>
+
         <div class="home-sci">
             <a href="#"><i class='bx bxl-linkedin' ></i></i></a>
             <a href="#"><i class='bx bxl-instagram'></i></a>
             <a href="#"><i class='bx bxl-telegram' ></i></a>
         </div>
-
-        <!-- <span class="home-imghover"></span> -->
     </section>
-    
+
+    <script>
+        const text = document.querySelector(".sec-text"); 
+
+        const textLoad = () => {
+            setTimeout(() =>{
+                text.textContent = "Samuel Gomes";
+            }, 0);
+            setTimeout(() =>{
+                text.textContent = "Frontend Developer";
+            }, 5000);
+        }
+
+        textLoad();
+    </script>
+
 </body>
 </html>
